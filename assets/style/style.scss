@@ -20,7 +20,7 @@ header {
     border-bottom: 1px solid $Light_grayish_blue;
     .brand_logo {
         padding-bottom: 9px;
-        margin-right: 3rem;
+        margin-right: 3vw;
     }
     .nav {
         .close {
@@ -85,10 +85,14 @@ header {
 }
 
 .productImage {
-    padding: 4rem;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 4rem;
+
     .mainImage {
         border-radius: 1rem;
         overflow: hidden;
+        cursor: pointer;
         img {
             width: 100%;
             height: 100%;
@@ -99,10 +103,28 @@ header {
         display: flex;
         justify-content: space-between;
         margin: 2rem 0;
-        img {
+        .active {
+            border-color: $Orange;
+            img {
+                opacity: 0.5; 
+            }
+        }
+        & > div {
             width: 100px;
             height: 100px;
             border-radius: 0.8rem;
+            border: 3px solid transparent;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover {
+                img {
+                    opacity: 0.5;
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
@@ -205,6 +227,121 @@ header {
             -webkit-appearance: none;
             margin: 0;
         }
+    }
+}
+
+.preview {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.76);
+    .carouselContainer {
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .close {
+            display: flex;
+            justify-content: flex-end;
+            margin: 1rem 0;
+            cursor: pointer;
+            &:hover {
+                filter: invert(58%) sepia(81%) saturate(2480%) hue-rotate(346deg) brightness(102%) contrast(104%);
+            }
+        }
+        .carousel {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            border-radius: 1rem;
+            .item {
+                position: absolute;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                }
+            }
+            .prev, .next {
+                position: absolute;
+                z-index: 100;
+                top: 50%;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $Light_grayish_blue;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &:hover {
+                    img {
+                        filter: invert(58%) sepia(81%) saturate(2480%) hue-rotate(346deg) brightness(102%) contrast(104%);
+                    }
+                }
+            }
+            .prev {
+                left: 0;
+                transform: translate(-50%, -50%);
+                img {
+                    left: 45%
+                }
+                &:hover {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+            .next {
+                right: 0;
+                transform: translate(50%, -50%);
+                img {
+                    left: 55%
+                }
+                &:hover {
+                    transform: translate(50%, -50%) scale(1.1);
+                }
+            }
+        }
+        .itemPreview {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 3.5rem;
+            .item {
+                width: 100px;
+                height: 100px;
+                border-radius: 0.8rem;
+                border: 2px solid transparent;
+                overflow: hidden;
+                cursor: pointer;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    &:hover {
+                        opacity: 0.5;
+                        transition: opacity 0.1s ease-in-out;
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-color: white;
+                    z-index: -1;
+                }
+            }
+            .active {
+                border-color: $Orange;
+                img {
+                    opacity: 0.5;
+                }
+            }
+        } 
     }
 }
 
