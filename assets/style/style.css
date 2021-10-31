@@ -286,6 +286,7 @@ header .panierProfil .profil img:hover {
 }
 
 .preview {
+  display: none;
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.76);
@@ -326,6 +327,34 @@ header .panierProfil .profil img:hover {
   height: 600px;
   position: relative;
   border-radius: 1rem;
+}
+
+.preview .carouselContainer .carousel .active {
+  z-index: 50;
+  -webkit-animation: fade 0.3s ease-in forwards;
+          animation: fade 0.3s ease-in forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.preview .carouselContainer .carousel .fading {
+  z-index: 40;
 }
 
 .preview .carouselContainer .carousel .item {
@@ -442,6 +471,10 @@ header .panierProfil .profil img:hover {
 
 .preview .carouselContainer .itemPreview .active img {
   opacity: 0.5;
+}
+
+.open {
+  display: block;
 }
 
 @media screen and (max-width: 800px) {

@@ -230,7 +230,9 @@ header {
     }
 }
 
+
 .preview {
+    display: none;
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.76);
@@ -255,6 +257,21 @@ header {
             height: 600px;
             position: relative;
             border-radius: 1rem;
+            .active {
+                z-index: 50;
+                animation: fade 0.3s ease-in forwards;
+            }
+            @keyframes fade {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }                
+            }
+            .fading {
+                z-index: 40;
+            }
             .item {
                 position: absolute;
                 img {
@@ -343,6 +360,10 @@ header {
             }
         } 
     }
+}
+
+.open {
+    display: block;
 }
 
 @media screen and (max-width: 800px) {
