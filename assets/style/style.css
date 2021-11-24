@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 body {
   font-family: 'Kumbh Sans', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 header {
@@ -11,6 +14,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #f7f8fd;
+  position: relative;
 }
 
 header .brand_logo {
@@ -97,6 +101,120 @@ header .panierProfil .profil img:hover {
   border: 2px solid #ff7d1a;
 }
 
+header .open {
+  display: block !important;
+  -webkit-animation: open 1s cubic-bezier(0.57, -0.52, 0.54, 0.99) forwards;
+          animation: open 1s cubic-bezier(0.57, -0.52, 0.54, 0.99) forwards;
+}
+
+@-webkit-keyframes open {
+  0% {
+    -webkit-transform: translate(-10px, 30px);
+            transform: translate(-10px, 30px);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes open {
+  0% {
+    -webkit-transform: translate(-10px, 30px);
+            transform: translate(-10px, 30px);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+header .cart-card {
+  display: none;
+  position: absolute;
+  right: -60px;
+  top: 80%;
+  background-color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.192);
+          box-shadow: 0 15px 20px rgba(0, 0, 0, 0.192);
+}
+
+header .cart-card > * {
+  padding: 1.3rem;
+}
+
+header .cart-card .title {
+  padding: 1rem 1.3rem;
+}
+
+header .cart-card .card-content {
+  border-top: 2px solid #f7f8fd;
+}
+
+header .cart-card .card-content a {
+  text-decoration: none;
+}
+
+header .cart-card .card-content a section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+header .cart-card .card-content a section img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+header .cart-card .card-content a section .desc {
+  color: #b6bcc8;
+}
+
+header .cart-card .card-content a section .desc .price span {
+  color: black;
+  font-weight: bold;
+}
+
+header .cart-card .card-content a section .delete {
+  width: 15px;
+  height: auto;
+}
+
+header .cart-card .card-content button {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #ff7d1a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+header .cart-card .card-content button:hover {
+  opacity: 0.5;
+}
+
 .productImage {
   max-width: 500px;
   margin: auto;
@@ -178,6 +296,10 @@ header .panierProfil .profil img:hover {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
+}
+
+.productDesc .desc {
+  color: #68707d;
 }
 
 .productDesc .pricing {

@@ -12,12 +12,16 @@ $Black: hsl(0, 0%, 0%); // (with 75% opacity for lightbox background)
 
 body {
     font-family: 'Kumbh Sans', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid $Light_grayish_blue;
+    position: relative;
     .brand_logo {
         padding-bottom: 9px;
         margin-right: 3vw;
@@ -78,6 +82,84 @@ header {
                 transition: border 0.2s ease-in-out;
                 &:hover {
                     border: 2px solid $Orange;
+                }
+            }
+        }
+    }
+    .open {
+        display: block !important;
+        animation: open 1s cubic-bezier(.57,-0.52,.54,.99) forwards;
+    }
+    @keyframes open {
+        0% {
+            transform: translate(-10px, 30px);
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+    .cart-card {
+        display: none;
+        position: absolute;
+        right: -60px;
+        top: 80%;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.192);
+        &>*{
+            padding: 1.3rem;
+        }
+        .title {
+            padding: 1rem 1.3rem;
+        }
+        .card-content {
+            border-top: 2px solid #f7f8fd;
+            a {
+                text-decoration: none;
+                section {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        object-fit: cover;
+                        border-radius: 0.3rem;
+                    }
+                    .desc {
+                        color: $Grayish_blue;
+                        .price {
+                            span {
+                                color: black;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .delete {
+                        width: 15px;
+                        height: auto;
+                    }
+                }
+            }
+            button {
+                margin-top: 1rem;
+                width: 100%;
+                background-color: $Orange;
+                color: $White;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 0.4rem;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: opacity 0.2s ease-in-out;
+                &:hover {
+                    opacity: 0.5;
                 }
             }
         }
@@ -145,6 +227,9 @@ header {
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 2rem;
+    }
+    .desc {
+        color: $Dark_grayish_blue;
     }
     .pricing {
         display: flex;
@@ -449,7 +534,7 @@ header {
             font-weight: bold;
         }
     }
-
-    
 }
+
+
 

@@ -97,3 +97,15 @@ allThumbnail.forEach( element => {
         mainImage.querySelector('img').src = `./assets/images/image-product-${source}.jpg`
     })
 })
+
+
+document.addEventListener('click', function(e){
+    console.log(e.target);
+
+    if (preview.classList.contains('open')) {
+        if (e.target == preview) {
+            preview.classList.remove('open')
+        }
+    }
+})
+
