@@ -67,19 +67,41 @@ header .panierProfil {
 }
 
 header .panierProfil .cart {
-  padding: 0 2rem;
+  margin: 0 2rem;
+  position: relative;
+}
+
+header .panierProfil .cart img {
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+header .panierProfil .cart img:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 header .panierProfil .cart .burger {
   display: none;
 }
 
-header .panierProfil .cart:hover {
+header .panierProfil .cart .active {
   opacity: 1;
-  cursor: pointer;
+}
+
+header .panierProfil .cart .item-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff7d1a;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: white;
+  padding: 0px 8px;
+  border-radius: 1rem;
+  -webkit-transform: translate(40%, -20%);
+          transform: translate(40%, -20%);
 }
 
 header .panierProfil .profil {
@@ -303,6 +325,16 @@ header .cart-card .card-content button:hover {
 }
 
 .productDesc .pricing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDesc .pricing .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -599,15 +631,16 @@ header .cart-card .card-content button:hover {
   display: block;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   header {
     height: 70px;
+    position: unset;
   }
   header .brand_logo {
     margin-right: 0;
   }
   header .panierProfil .cart {
-    padding: 0 1rem;
+    margin: 0 1rem;
   }
   header .panierProfil .profil {
     margin-left: 0.5rem;
@@ -615,6 +648,12 @@ header .cart-card .card-content button:hover {
   header .panierProfil .profil img {
     width: 2rem;
     height: 2rem;
+  }
+  header .cart-card {
+    z-index: 100;
+    top: 75px;
+    left: 5px;
+    right: 5px;
   }
   .burger {
     width: 20px;
@@ -641,6 +680,7 @@ header .cart-card .card-content button:hover {
     background-color: rgba(0, 0, 0, 0.74);
     position: absolute;
     inset: 0;
+    z-index: 100;
   }
   .open {
     -webkit-animation: open 0.5s ease-in-out forwards;
@@ -707,6 +747,91 @@ header .cart-card .card-content button:hover {
     margin-left: 0 !important;
     color: black !important;
     font-weight: bold;
+  }
+  .productImage {
+    display: none;
+  }
+  .preview {
+    display: block;
+    position: relative;
+  }
+  .preview .carouselContainer {
+    position: unset;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  .preview .carouselContainer .carousel {
+    width: 100vw;
+    height: 80vw;
+    overflow: hidden;
+    border-radius: 0;
+  }
+  .preview .carouselContainer .carousel .prev, .preview .carouselContainer .carousel .next {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 40px;
+    height: 40px;
+  }
+  .preview .carouselContainer .carousel .prev img, .preview .carouselContainer .carousel .next img {
+    width: 10px;
+  }
+  .preview .carouselContainer .carousel .prev:hover, .preview .carouselContainer .carousel .next:hover {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  .preview .carouselContainer .carousel .prev {
+    left: 10px;
+  }
+  .preview .carouselContainer .carousel .next {
+    right: 10px;
+  }
+  .preview .carouselContainer .carousel .item {
+    width: 100%;
+    height: 100%;
+  }
+  .preview .carouselContainer .carousel .item img {
+    border-radius: 0;
+  }
+  .preview .itemPreview, .preview .close {
+    display: none !important;
+  }
+  .productDesc {
+    padding: 5px;
+    padding-top: 1.5rem;
+  }
+  .productDesc h3 {
+    font-size: 0.9rem;
+  }
+  .productDesc h1 {
+    font-size: 1.8rem;
+  }
+  .productDesc .pricing {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
+  .productDesc form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .productDesc form > * {
+    max-width: 100% !important;
+  }
+  .productDesc form .quantity {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+  .productDesc form button {
+    margin-left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

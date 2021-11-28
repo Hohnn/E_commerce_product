@@ -100,8 +100,6 @@ allThumbnail.forEach( element => {
 
 
 document.addEventListener('click', function(e){
-    console.log(e.target);
-
     if (preview.classList.contains('open')) {
         if (e.target == preview) {
             preview.classList.remove('open')
