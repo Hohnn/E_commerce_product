@@ -1,3 +1,7 @@
+<?php
+  require_once '../app/require.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="stylesheet" href="../public/assets/css/style.css">
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -23,10 +27,10 @@
         <div class="line"></div>
         <div class="line"></div>
       </div>
-      <a class="brand_logo" href="/"><img src="./assets/images/logo.svg" alt="brand logo"></a>
+      <a class="brand_logo" href="/"><img src="../public/assets/images/logo.svg" alt="brand logo"></a>
       <nav class="closed" id="nav">
         <ul class="nav">
-          <div class="close" id="closeNav"><img src="./assets/images/icon-close.svg" alt="close"></div>
+          <div class="close" id="closeNav"><img src="../public/assets/images/icon-close.svg" alt="close"></div>
           <li class="nav-item">
             <a class="nav-link active" href="#">Collections</a>
           </li>
@@ -46,10 +50,10 @@
       </nav>
       <div class="panierProfil">
         <div class="cart" id="cart">
-          <img src="./assets/images/icon-cart.svg" alt="cart">
+          <img src="../public/assets/images/icon-cart.svg" alt="cart">
           <div class="item-number">1</div>
         </div>
-        <a href="#" class="profil"><img src="./assets/images/image-avatar.png" alt="avatar"></a>
+        <a href="#" class="profil"><img src="../public/assets/images/image-avatar.png" alt="avatar"></a>
       </div>
       <div class="cart-card" id="cart-card">
         <div class="title"><strong>Cart</strong></div>
@@ -72,35 +76,35 @@
 
   <div class="preview" id="preview">
     <div class="carouselContainer" id="carouselContainer">
-      <div class="close" id="closePreview"><img src="./assets/images/icon-close.svg" alt="close btn"></div>
+      <div class="close" id="closePreview"><img src="../public/assets/images/icon-close.svg" alt="close btn"></div>
       <div class="carousel">
-        <div class="prev" id="prev"><img src="./assets/images/icon-previous.svg" alt="previous button"></div>
-        <div class="next" id="next"><img src="./assets/images/icon-next.svg" alt="next button"></div>
+        <div class="prev" id="prev"><img src="../public/assets/images/icon-previous.svg" alt="previous button"></div>
+        <div class="next" id="next"><img src="../public/assets/images/icon-next.svg" alt="next button"></div>
         <div class="item active" data-carousel="1">
-          <img src="./assets/images/image-product-1.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-1.jpg" alt="product image">
         </div>
         <div class="item" data-carousel="2">
-          <img src="./assets/images/image-product-2.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-2.jpg" alt="product image">
         </div>
         <div class="item" data-carousel="3">
-          <img src="./assets/images/image-product-3.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-3.jpg" alt="product image">
         </div>
         <div class="item" data-carousel="4">
-          <img src="./assets/images/image-product-4.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-4.jpg" alt="product image">
         </div>
       </div>
       <div class="itemPreview">
         <div class="item active" data-preview="1">
-          <img src="./assets/images/image-product-1-thumbnail.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-1-thumbnail.jpg" alt="product image">
         </div>
         <div class="item" data-preview="2">
-          <img src="./assets/images/image-product-2-thumbnail.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-2-thumbnail.jpg" alt="product image">
         </div>
         <div class="item" data-preview="3">
-          <img src="./assets/images/image-product-3-thumbnail.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-3-thumbnail.jpg" alt="product image">
         </div>
         <div class="item" data-preview="4">
-          <img src="./assets/images/image-product-4-thumbnail.jpg" alt="product image">
+          <img src="../public/assets/images/image-product-4-thumbnail.jpg" alt="product image">
         </div>
       </div>
     </div>
@@ -111,13 +115,13 @@
       <div class="col-0 col-md-6">
         <div class="productImage">
           <div class="mainImage" id="mainImage">
-            <img src="./assets/images/image-product-1.jpg" alt="product image">
+            <img src="../public/assets/images/image-product-1.jpg" alt="product image">
           </div>
           <div class="thumbnail">
-            <div class="active" data-thumbnail='1'><img  src="./assets/images/image-product-1-thumbnail.jpg" alt="product image"></div>
-            <div data-thumbnail='2'><img src="./assets/images/image-product-2-thumbnail.jpg" alt="product image"></div>
-            <div data-thumbnail='3'><img src="./assets/images/image-product-3-thumbnail.jpg" alt="product image"></div>
-            <div data-thumbnail='4'><img src="./assets/images/image-product-4-thumbnail.jpg" alt="product image"></div>
+            <div class="active" data-thumbnail='1'><img  src="../public/assets/images/image-product-1-thumbnail.jpg" alt="product image"></div>
+            <div data-thumbnail='2'><img src="../public/assets/images/image-product-2-thumbnail.jpg" alt="product image"></div>
+            <div data-thumbnail='3'><img src="../public/assets/images/image-product-3-thumbnail.jpg" alt="product image"></div>
+            <div data-thumbnail='4'><img src="../public/assets/images/image-product-4-thumbnail.jpg" alt="product image"></div>
           </div>
         </div>
       </div>
@@ -154,7 +158,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  <script src="./assets/js/navbar.js"></script>
-  <script src="./assets/js/carousel.js"></script>
+  <script src="../public/assets/js/navbar.js"></script>
+  <script src="../public/assets/js/carousel.js"></script>
 </body>
 </html>
