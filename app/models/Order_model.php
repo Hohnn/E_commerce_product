@@ -2,22 +2,28 @@
 
 namespace App\models;
 
+use DateTime;
+
 class Order_model {
-    public $qauntity;
+    public $quantity;
     public $product;
     public $date;
     
-    public function __construct()
+    public function __construct($quantity, $product, $Cart)
     {
-        var_dump('Order model');
+        $this->quantity = $quantity;
+        $this->product = $product;
+        $this->date = new DateTime();
+
+        $Cart->setTotalPrice($this->quantity * $this->product->price);
     }
 
     /**
      * Get the value of qauntity
      */ 
-    public function getQauntity()
+    public function getQuantity()
     {
-        return $this->qauntity;
+        return $this->quantity;
     }
 
     /**
@@ -25,9 +31,9 @@ class Order_model {
      *
      * @return  self
      */ 
-    public function setQauntity($qauntity)
+    public function setQuantity($quantity)
     {
-        $this->qauntity = $qauntity;
+        $this->quantity = $quantity;
 
         return $this;
     }

@@ -3,18 +3,19 @@
 namespace App\models;
 
 class Product_model {
-    private $type;
+    public $type;
     public $name;
     public $price;
     public $description;
+    public $company;
     
-    public function __construct($type, $name, $price, $description)
+    public function __construct($type, $name, $price, $description, $company)
     {
-        var_dump('Product model');
         $this->type = $type;
         $this->name = $name;
         $this->price = $price;
         $this->description = $description;
+        $this->company = $company;
     }
 
     /**
@@ -93,6 +94,26 @@ class Product_model {
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of company
+     */ 
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Set the value of company
+     *
+     * @return  self
+     */ 
+    public function setCompany($company)
+    {
+        $this->company = $company;
 
         return $this;
     }

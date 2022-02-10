@@ -2,14 +2,18 @@
 
 namespace App\models;
 
+
 class Cart_model {
-    public $totalPrice;
-    public $totalItem;
+    public $totalPrice = 0;
+    public $totalItem = 0;
     public $status;
+
+    const STATUS_PENDING = "En attente";
+    const STATUS_VALIDATED = "Validé";
 
     public function __construct()
     {
-        var_dump('Cart model');
+        $this->status = self::STATUS_PENDING;
     }
 
     /**
@@ -27,7 +31,7 @@ class Cart_model {
      */ 
     public function setTotalPrice($totalPrice)
     {
-        $this->totalPrice = $totalPrice;
+        $this->totalPrice += $totalPrice;
 
         return $this;
     }

@@ -62,7 +62,7 @@
             <section>
               <img src="assets/images/image-product-1-thumbnail.jpg" alt="product thumbnail">
               <div class="desc">
-                <div class="desc-title">Fall Limited Edition Sneakers</div>
+                <div class="desc-title"><?= $product->name ?></div>
                 <div class="price">$125.00 x 3 <span>$375.00</span></div>
               </div>
               <img class="delete" src="assets/images/icon-delete.svg" alt="delete">      
@@ -127,24 +127,23 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="productDesc">
-          <h3>Sneaker Company</h3>
-          <h1>Fall Limited Edition Sneakers</h1>
-          <p class="desc">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+          <h3><?= $product->company ?></h3>
+          <h1><?= $product->name ?> <?= $product->type ?></h1>
+          <p class="desc"><?= $product->description ?></p>
           <div class="pricing">
             <div class="flex">
-              <div class="price">$125.00</div>
+              <div class="price">$<?= number_format($product->price, 2, '.', ' ') ?></div>
               <div class="promo">50%</div>
             </div>           
             <div class="oldPrice">$250.00</div>
           </div>
-          <form >
+          <form action="" method="POST">
             <div class="quantity">
               <div class="minus"></div>
-              <input type="number" name="" id="" class="number" value="1">
+              <input type="number" name="quantity" id="" class="number" min="1" value="1">
               <div class="plus"></div>
             </div>
-            <button type="submit">Add to cart</button>
+            <button type="submit" >Add to cart</button>
           </form>
         </div>
 
