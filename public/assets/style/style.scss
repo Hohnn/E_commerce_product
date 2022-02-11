@@ -139,9 +139,15 @@ header {
         }
         .card-content {
             border-top: 2px solid #f7f8fd;
-            a {
-                text-decoration: none;
-                section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                a {
+                    text-decoration: none;
                     display: flex;
                     align-items: center;
                     gap: 1rem;
@@ -160,14 +166,17 @@ header {
                             }
                         }
                     }
+                }
+                button {
+                    border: none;
+                    background: none;
                     .delete {
                         width: 15px;
                         height: auto;
                     }
                 }
             }
-            button {
-                margin-top: 1rem;
+            .checkout{
                 width: 100%;
                 background-color: $Orange;
                 color: $White;

@@ -1,5 +1,5 @@
 <?php
-  require '../app/controllers/Controllers.php'
+  require '../app/controllers/Controllers.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,25 +51,35 @@
       <div class="panierProfil">
         <div class="cart" id="cart">
           <img src="../public/assets/images/icon-cart.svg" alt="cart">
-          <div class="item-number">1</div>
+          <?php if( !$Cart->isEmpty() ){ ?>
+          <div class="item-number"><?= $Cart->totalItem ?></div>
+          <?php } ?>
         </div>
         <a href="#" class="profil"><img src="../public/assets/images/image-avatar.png" alt="avatar"></a>
       </div>
       <div class="cart-card" id="cart-card">
+        <?php if( !$Cart->isEmpty() ){ ?>
         <div class="title"><strong>Cart</strong></div>
         <div class="card-content">
-          <a href="#">
-            <section>
+          <?php foreach($Cart->items as $order){ ?>
+          <section>
+            <a href="#">
               <img src="assets/images/image-product-1-thumbnail.jpg" alt="product thumbnail">
               <div class="desc">
-                <div class="desc-title"><?= $product->name ?></div>
-                <div class="price">$125.00 x 3 <span>$375.00</span></div>
+                <div class="desc-title"><?= $order['item']->product->name ?></div>
+                <div class="price">$<?= $order['item']->product->price ?> x <?= $order['item']->quantity ?> <span>$<?= $order['item']->totalPrice ?></span></div>
               </div>
-              <img class="delete" src="assets/images/icon-delete.svg" alt="delete">      
-            </section>
-          </a>
-          <button type="button" class="">Checkout</button>
+            </a>
+            <form action="../public/index.php" method="POST">
+              <button type="submit" name="deleteItem" value="<?= $order['key'] ?>"><img class="delete" src="assets/images/icon-delete.svg" alt="delete"></button>      
+            </form>
+          </section>
+          <?php } ?>
+          <button type="button" class="checkout">Checkout</button>
         </div>
+        <?php } else { ?>
+          <div class="title"><strong>Vide</strong></div>
+        <?php } ?>
       </div>
     </header>
   </div>

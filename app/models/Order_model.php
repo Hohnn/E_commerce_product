@@ -8,14 +8,14 @@ class Order_model {
     public $quantity;
     public $product;
     public $date;
+    public $totalPrice;
     
-    public function __construct($quantity, $product, $Cart)
+    public function __construct($quantity, $product)
     {
         $this->quantity = $quantity;
         $this->product = $product;
         $this->date = new DateTime();
-
-        $Cart->setTotalPrice($this->quantity * $this->product->price);
+        $this->totalPrice = $this->product->price * $this->quantity;
     }
 
     /**
